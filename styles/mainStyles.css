@@ -1,0 +1,61 @@
+:root {
+  --main-color: #272b30;
+  --secondry-color: #3a497b;
+  --thierd-color: #0099cc;
+}
+
+body {
+  background-color: var(--main-color);
+  margin-bottom: 0;
+  /* font-family: "Comfortaa", sans-serif; */
+  font-family: "Nerko One", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.navbar {
+  background-color: var(--secondry-color) !important;
+  border-radius: 100px !important;
+}
+
+.Header {
+  background-image: url("../imgs/wraper.png");
+  height: 30vh;
+  width: "100%";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.HeaderFont {
+  font-family: "Nerko One", cursive;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+}
+
+.navbar-nav .nav-item a {
+  font-size: 12px;
+}
+
+.navbar-nav .nav-item a:hover {
+  color: var(--thierd-color) !important;
+}
+
+.game-item:hover {
+  transform: scale(1.1);
+}
+
+.game-item {
+  transition: all 0.5s;
+}
+
+.active {
+  color: var(--thierd-color) !important;
+}
