@@ -1,30 +1,48 @@
+import { DetailsGames } from "./details.modal.js";
+import { Games } from "./games.modal.js";
+import { UIClass } from "./ui.js";
+
+const InstanceUi = new UIClass();
+const GamesDetailsInstance = new DetailsGames();
+const GamesInstance = new Games();
+
 const navBarItems = document.querySelectorAll(".nav-item a");
 const rowItem = document.querySelector(".row");
+// const GameItem = document.querySelectorAll(".game-item");
+const Modal = document.querySelectorAll(".footer");
 
+// filters by category
 navBarItems.forEach((item) => {
-  item.addEventListener("click", function () {
+  item.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    navBarItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+
     const value = item.getAttribute("value");
+    item.classList.add("active");
     
-    alert(value);
+    GamesInstance.getGames(value).then((res) => {
+      InstanceUi.DisplayGames(res);
+    });
   });
 });
 
-let box;
+// show modal
+// GameItem.forEach((item) => {
+//   item.addEventListener("click", function () {
+//     const value = item.getAttribute("gameId");
+//     console.log(value)
+//     // GamesDetailsInstance.displayModal({
+//     //   window:"Windows"
+//     // });
+//   });
+// });
 
-for (let i = 0; i < 20; i++) {
-    rowItem.innerHTML  += `
-      <div class="col-3 game-item">
-        <div class="card bg-transparent  " >
-          <img src="imgs/logo-sm.png" class="card-img-top w-50 p-3 align-self-center" alt="..." />
-          <div class="card-body">
-            <p class=" text-light">An item</p>
-           
-          </div>
-          <ul class="list-group list-group-flush bg-transparent">
-            <li class="list-group-item bg-transparent text-light">An item</li>
-          </ul>
-        </div>
-      </div>
-    `;
-}
+// // fetch games
+GamesInstance.getGames("MMORPG").then((res) => {
+  InstanceUi.DisplayGames(res);
+});
 
+// GamesInstance.getGameById(540)

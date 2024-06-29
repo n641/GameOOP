@@ -18,9 +18,8 @@
   <body>
     <div class="Header"></div>
 
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark container sticky-top py-1"
-    >
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark container sticky-top py-1">
       <div class="container">
         <a class="navbar-brand d-flex gap-3 align-items-center" href="#">
           <img src="imgs/logo-sm.png" width="50" />
@@ -50,7 +49,7 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-sm-5 mt-lg-0">
-            <li class="nav-item mt-sm-3 mt-lg-0 active">
+            <li class="nav-item mt-sm-3 mt-lg-0">
               <a
                 class="nav-link active fs-13 mx-2"
                 aria-current="page"
@@ -120,13 +119,43 @@
       </div>
     </nav>
 
-    <div class="row  g-4 m-5">
+    <!-- games -->
+    <div class="row g-4 m-5"></div>
 
-      
+    <!-- modal -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+      aria-label="Close"
+    >
+      <div class="modal-dialog mt-0">
+        <div class="modal-content bg-transparent border-0">
+          <div class="modal-header border-bottom-0">
+            <h1 class="text-light fw-bold">Details Game</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
 
-         </div>
+          <div id="Modal-content" class=""></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-loader" id="loader">
+      <span class="loader"></span>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
